@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <script src="VSS.SDK.min.js"></script>
+
+    <script type="text/javascript">
+        // Initialize VSTS.
+        VSS.init({
+            usePlatformScripts: true,
+            usePlatformStyles: true,
+            explicitNotifyLoaded: true,
+        });
+
+        // Wait for the SDK to be initialized and load the extension.
+        VSS.ready(function () {
+            VSS.require(["dist/main"], function () {
+                VSS.notifyLoadSucceeded();
+            });
+        });
+    </script>
+
+    <div>This is static dialog html but it could be react
+        <input />
+    </div>
+</body>
+</html>

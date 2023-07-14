@@ -1,0 +1,54 @@
+{
+    "manifestVersion": 1,
+    "id": "odyssey-poc",
+    "name": "Project Odyssey PoC",
+    "version": "0.0.16",
+    "publisher": "ISEVoyagerDevCrew",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Project Odyssey PoC",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "dist",
+            "addressable": true
+        },
+        {
+            "path": "images",
+            "addressable": true
+        }
+    ],
+    "contributions": [
+        {
+            "id": "project-odyssey-generate-description",
+            "type": "ms.vss-web.action",
+            "description": "Workitem co-pilot",
+            "targets": [
+                "ms.vss-work-web.work-item-context-menu"
+            ],
+            "properties": {
+                "name": "Generate description",
+                "title": "Generate description of the user story",
+                "toolbarText": "Generate description",
+                "icon": "images/extension-icon.png",
+                "uri": "dist/main-generateDescription.html"
+            }
+        },
+        {
+            "id": "app-dialog",
+            "type": "ms.vss-web.control",
+            "targets": [],
+            "properties": {
+                "uri": "dist/dialog.html"
+            }
+        }
+    ]
+}

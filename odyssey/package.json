@@ -1,0 +1,26 @@
+{
+  "name": "azdo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "cp *.js ./node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js *.html dist/",
+    "package": " tfx extension create --manifest-globs vss-extension.json",
+    "build": "./node_modules/.bin/tsc ; npm run dist && npm run package"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^4.4.0",
+    "vss-web-extension-sdk": "^5.141.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.4.1",
+    "@types/q": "^1.5.5",
+    "sync-request": "^6.1.0",
+    "typescript": "^5.1.6"
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <script src="VSS.SDK.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        // Initialize framework 
+        VSS.init({
+            explicitNotifyLoaded: true,
+            usePlatformScripts: true,
+            configureModuleLoader: true
+        });
+        
+        // Register a listener for the menu item contribution
+        VSS.ready(function () {
+            VSS.require(["dist/main"], function () {
+                VSS.notifyLoadSucceeded();
+            });
+        });
+    </script>
+    <div id="container"></div>
+</body>
